@@ -3,7 +3,7 @@
     <groupId>org.synyx</groupId>
     <artifactId>maven-opencms</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>maven-opencms Maven OpenCms Mojo</name>
     <description>This Mojo creates (and imports) an OpenCms module.
     
@@ -16,9 +16,8 @@
         <url>https://redmine.synyx.org/maven-opencms/</url>
     </issueManagement>
     <scm>
-        <connection>scm:svn:https://svn.synyx.de/svn/synyx/internal/tools/maven-mojos/maven-opencms</connection>
-        <developerConnection>scm:svn:svn+ssh://svn/var/svn/synyx/internal/tools/maven-mojos/maven-opencms</developerConnection>
-        <url>https://svn.synyx.de/svn/synyx/internal/tools/maven-mojos/maven-opencms/trunk</url>
+        <connection>scm:git:http://git.synyx.org/maven-opencms</connection>
+        <developerConnection>scm:git:ssh://git@git.synyx.org/maven-opencms</developerConnection>
     </scm>
     <licenses>
         <license>
