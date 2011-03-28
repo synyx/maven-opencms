@@ -101,10 +101,16 @@ public abstract class AbstractOpenCmsMojo extends AbstractMojo {
 
     }
 
-
+    /**
+     * Sets the version number to use for the OpenCms module. This method strips
+     * any trailing alphanumeric characters as these are illegal for OpenCms.
+     * This makes it possible to use the Maven version as a module version as any
+     * SNAPSHOT suffixes are removed.
+     * @param version
+     */
     public void setVersion(String version) {
-
-        this.version = version;
+        // modify version number so that it doesn't contain
+        this.version = extractVersionNumber(version);
     }
 
 
@@ -129,5 +135,14 @@ public abstract class AbstractOpenCmsMojo extends AbstractMojo {
     public void setTargetLibPath(String targetLibPath) {
 
         this.targetLibPath = targetLibPath;
+    }
+
+    private String extractVersionNumber(String originalVersionNumber) {
+        // check if there are non-digit letters at the end
+        if (originalVersionNumber != null && originalVersionNumber.matches(".*\\D+$")) {
+            // remove anything after the last digit
+            originalVersionNumber = originalVersionNumber.replaceAll("\\D+$", "");
+        }
+        return originalVersionNumber;
     }
 }
