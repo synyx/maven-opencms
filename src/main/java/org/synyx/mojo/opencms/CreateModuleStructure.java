@@ -37,7 +37,7 @@ public class CreateModuleStructure extends AbstractMojo {
     private String pathToModule;
     /**
      * The path to create the folder structure to.
-     * @parameter default-value="src/main/vfs"
+     * @parameter expression="${opencms.targetPath}" default-value="src/main/vfs"
      */
     private String targetPath;
 
