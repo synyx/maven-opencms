@@ -41,49 +41,49 @@ public class FlagConverter extends A_AttributeConverter {
         
     @Override
     public void convertTag(Element element) {
-        int value = 0;
-        
-        List<Attribute> attributes = (List<Attribute>) element.attributes();
-        int size = attributes.size();
-        for (int i = 0; i < size; i++) {
-            // allways get the first element, because every cycle one attribute becomes deleted
-            Attribute attribute = attributes.get(0);
-            
-            String attributeName = attribute.getName();
-            if (attributeName != null) {
-                attributeName = attributeName.toLowerCase();
-            } else {
-                attributeName = "";
-            }
-
-            if (ATTR_TRUE_VALUE.equals(attribute.getValue())) {
-                if (ATTR_DELETED.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_DELETED;
-                } else if (ATTR_INHERIT.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_INHERIT;
-                } else if (ATTR_OVERWRITE.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_OVERWRITE;
-                } else if (ATTR_INHERITED.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_INHERITED;
-                } else if (ATTR_USER.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_USER;
-                } else if (ATTR_GROUP.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_GROUP;
-                } else if (ATTR_RESPONSIBLE.equals(attributeName)) {
-                    value += CmsAccessControlEntry.ACCESS_FLAGS_RESPONSIBLE;
-                }
-            }
-                      
-            element.remove(attribute);            
-            
-        }
-        
-        if (!element.isReadOnly()) { 
-            if (element.getText() == null || ! "".equals(element.getText())) {
-                element.clearContent();
-            }
-            element.addText(String.valueOf(value));            
-        }
+//        int value = 0;
+//
+//        List<Attribute> attributes = (List<Attribute>) element.attributes();
+//        int size = attributes.size();
+//        for (int i = 0; i < size; i++) {
+//            // allways get the first element, because every cycle one attribute becomes deleted
+//            Attribute attribute = attributes.get(0);
+//
+//            String attributeName = attribute.getName();
+//            if (attributeName != null) {
+//                attributeName = attributeName.toLowerCase();
+//            } else {
+//                attributeName = "";
+//            }
+//
+//            if (ATTR_TRUE_VALUE.equals(attribute.getValue())) {
+//                if (ATTR_DELETED.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_DELETED;
+//                } else if (ATTR_INHERIT.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_INHERIT;
+//                } else if (ATTR_OVERWRITE.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_OVERWRITE;
+//                } else if (ATTR_INHERITED.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_INHERITED;
+//                } else if (ATTR_USER.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_USER;
+//                } else if (ATTR_GROUP.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_GROUP;
+//                } else if (ATTR_RESPONSIBLE.equals(attributeName)) {
+//                    value += CmsAccessControlEntry.ACCESS_FLAGS_RESPONSIBLE;
+//                }
+//            }
+//
+//            element.remove(attribute);
+//
+//        }
+//
+//        if (!element.isReadOnly()) {
+//            if (element.getText() == null || ! "".equals(element.getText())) {
+//                element.clearContent();
+//            }
+//            element.addText(String.valueOf(value));
+//        }
         
     }
 

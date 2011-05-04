@@ -38,43 +38,43 @@ public class PermissionConverter extends A_AttributeConverter {
     public void convertTag(Element element) {
         int value = 0;
         
-        List<Attribute> attributes = (List<Attribute>) element.attributes();
-        int size = attributes.size();
-        for (int i = 0; i < size; i++) {
-            // allways get the first element, because every cycle one attribute becomes deleted
-            Attribute attribute = attributes.get(0);   
-            String attributeName = attribute.getName();
-            if (attributeName != null) {
-                attributeName = attributeName.toLowerCase();
-            } else {
-                attributeName = "";
-            }
-
-            if (ATTR_TRUE_VALUE.equals(attribute.getValue())) {
-                if (ATTR_READ.equals(attributeName)) {
-                    value += CmsPermissionSet.PERMISSION_READ;
-                } else if (ATTR_WRITE.equals(attributeName)) {
-                    value += CmsPermissionSet.PERMISSION_WRITE;
-                } else if (ATTR_VIEW.equals(attributeName)) {
-                    value += CmsPermissionSet.PERMISSION_VIEW;
-                } else if (ATTR_CONTROL.equals(attributeName)) {
-                    value += CmsPermissionSet.PERMISSION_CONTROL;
-                } else if (ATTR_PUBLISH.equals(attributeName)) {
-                    value += CmsPermissionSet.PERMISSION_DIRECT_PUBLISH;
-                } 
-            }
-            
-            element.remove(attribute);            
-            
-        }
-        
-        if (!element.isReadOnly()) { 
-            if (element.getText() == null || ! "".equals(element.getText())) {
-                element.clearContent();
-            }
-            element.addText(String.valueOf(value));            
-        }
-        
+//        List<Attribute> attributes = (List<Attribute>) element.attributes();
+//        int size = attributes.size();
+//        for (int i = 0; i < size; i++) {
+//            // allways get the first element, because every cycle one attribute becomes deleted
+//            Attribute attribute = attributes.get(0);
+//            String attributeName = attribute.getName();
+//            if (attributeName != null) {
+//                attributeName = attributeName.toLowerCase();
+//            } else {
+//                attributeName = "";
+//            }
+//
+//            if (ATTR_TRUE_VALUE.equals(attribute.getValue())) {
+//                if (ATTR_READ.equals(attributeName)) {
+//                    value += CmsPermissionSet.PERMISSION_READ;
+//                } else if (ATTR_WRITE.equals(attributeName)) {
+//                    value += CmsPermissionSet.PERMISSION_WRITE;
+//                } else if (ATTR_VIEW.equals(attributeName)) {
+//                    value += CmsPermissionSet.PERMISSION_VIEW;
+//                } else if (ATTR_CONTROL.equals(attributeName)) {
+//                    value += CmsPermissionSet.PERMISSION_CONTROL;
+//                } else if (ATTR_PUBLISH.equals(attributeName)) {
+//                    value += CmsPermissionSet.PERMISSION_DIRECT_PUBLISH;
+//                }
+//            }
+//
+//            element.remove(attribute);
+//
+//        }
+//
+//        if (!element.isReadOnly()) {
+//            if (element.getText() == null || ! "".equals(element.getText())) {
+//                element.clearContent();
+//            }
+//            element.addText(String.valueOf(value));
+//        }
+//
     }
 
 }
