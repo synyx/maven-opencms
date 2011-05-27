@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.synyx</groupId>
@@ -69,8 +70,8 @@
         </developer>
     </developers>
     <repositories>
-	<repository>
-    	    <id>public-thirdparty.nexus.synyx.de</id>
+        <repository>
+            <id>public-thirdparty.nexus.synyx.de</id>
             <name>Synyx Repo</name>
             <url>http://nexus.synyx.de/content/repositories/public-thirdparty</url>
         </repository>
@@ -103,7 +104,7 @@
             <version>6.2.3</version>
             <scope>provided</scope>
         </dependency>
-       <dependency>
+        <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
@@ -148,39 +149,47 @@
     <reporting>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jxr-maven-plugin</artifactId>
             </plugin>
-
+                        <!-- Metrics plugins -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+            </plugin>
+            <!-- Code checks -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
+                <artifactId>maven-pmd-plugin</artifactId>
                 <configuration>
-                    <additionalJOption>-J-Xmx512m</additionalJOption>
-                    <debug>true</debug>
-                    <header><![CDATA[
-<a href='http://www.synyx.de' target='_new'><img src='http://api.synyx.de/opencms_7.0.1/images/logo.gif' width='148px' height='56px' title='Provided by Synyx GmbH &amp; Co. KG' alt='Logo of Synyx GmbH &amp; Co. KG' border='0'></a>
-                    ]]>
-                    </header>
+                    <targetJdk>1.5</targetJdk>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jxr-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-clover-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>changelog-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>taglist-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <links>
+                        <link>http://java.sun.com/javase/6/docs/api/</link>
+                        <link>http://junit.sourceforge.net/javadoc/</link>
+                    </links>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
@@ -193,5 +202,9 @@
             <id>snapshots.nexus.synyx.de</id>
             <url>http://nexus.synyx.de/content/repositories/public-snapshots</url>
         </snapshotRepository>
+        <site>
+            <id>static.synyx.org</id>
+            <url>scp://static.synyx.org/home/public/public_html/maven-opencms-plugin/${project.version}</url>
+        </site>
     </distributionManagement>
 </project>
