@@ -328,7 +328,7 @@ public class ManifestBuilderMojo extends AbstractOpenCmsMojo {
 
 
         fileset.setDir(sourceDir);
-        fileset.setExcludes("**/__properties,**/__properties/**,**/__acl,**/__acl/**");
+        fileset.setExcludes("**/__properties,**/__properties/**,**/__acl,**/__acl/**, **/manifest.xml");
 
         // we have to create an ant-projet to avoid nullpointers...
         // @todo fix this
