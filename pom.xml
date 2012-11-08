@@ -1,4 +1,3 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.synyx</groupId>
@@ -7,19 +6,38 @@
     <version>1.2-SNAPSHOT</version>
     <name>maven-opencms Maven OpenCms Mojo</name>
     <description>This Mojo creates (and imports) an OpenCms module.
-    
-    It provides goals to create and import OpenCms-Modules based on information
-    defined in pom.xml and in some special formated files.
+
+        It provides goals to create and import OpenCms-Modules based on information
+        defined in pom.xml and in some special formated files.
     </description>
     <url>http://synyx.org</url>
+
     <issueManagement>
-        <system>Redmine</system>
-        <url>https://redmine.synyx.org/maven-opencms/</url>
+        <system>Github Issues</system>
+        <url>https://github.com/synyx/maven-opencms/issues</url>
     </issueManagement>
+
     <scm>
-        <connection>scm:git:http://git.synyx.org/maven-opencms-plugin</connection>
-        <developerConnection>scm:git:ssh://git@git.synyx.org/maven-opencms-plugin</developerConnection>
+        <url>https://github.com/synyx/maven-opencms</url>
+        <connection>scm:git:git://github.com/synyx/maven-opencms.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/synyx/maven-opencms.git</developerConnection>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>releases.nexus.synyx.de</id>
+            <url>http://nexus.synyx.de/content/repositories/public-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots.nexus.synyx.de</id>
+            <url>http://nexus.synyx.de/content/repositories/public-snapshots</url>
+        </snapshotRepository>
+        <site>
+            <id>static.synyx.org</id>
+            <url>scp://static.synyx.org/home/public/public_html/maven-opencms-plugin/${project.version}</url>
+        </site>
+    </distributionManagement>
+
     <licenses>
         <license>
             <name>GNU Lesser General Public License</name>
@@ -32,6 +50,7 @@
         <name>Synyx GmbH &amp; Co KG</name>
         <url>http://www.synyx.de</url>
     </organization>
+
     <developers>
         <developer>
             <id>kannegiesser@synyx.de</id>
@@ -69,6 +88,7 @@
             <timezone>+1</timezone>
         </developer>
     </developers>
+
     <repositories>
         <repository>
             <id>public-thirdparty.nexus.synyx.de</id>
@@ -81,6 +101,7 @@
             <url>http://nexus.synyx.de/content/repositories/thirdparty</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -134,6 +155,7 @@
             <version>1.5</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -157,13 +179,47 @@
             </plugin>
         </plugins>
     </build>
+
     <reporting>
         <plugins>
+            <!-- Documentation -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jxr-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <links>
+                        <link>http://junit.sourceforge.net/javadoc/</link>
+                    </links>
+                </configuration>
             </plugin>
-                        <!-- Metrics plugins -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+            </plugin>
+
+            <!-- General information -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>scm</report>
+                            <report>cim</report>
+                            <report>issue-tracking</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- Metrics plugins -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
@@ -172,6 +228,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
             </plugin>
+
             <!-- Code checks -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -182,40 +239,9 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>taglist-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <links>
-                        <link>http://java.sun.com/javase/6/docs/api/</link>
-                        <link>http://junit.sourceforge.net/javadoc/</link>
-                    </links>
-                </configuration>
+                <version>2.5.2</version>
             </plugin>
         </plugins>
     </reporting>
-    <distributionManagement>
-        <repository>
-            <id>releases.nexus.synyx.de</id>
-            <url>http://nexus.synyx.de/content/repositories/public-releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots.nexus.synyx.de</id>
-            <url>http://nexus.synyx.de/content/repositories/public-snapshots</url>
-        </snapshotRepository>
-        <site>
-            <id>static.synyx.org</id>
-            <url>scp://static.synyx.org/home/public/public_html/maven-opencms-plugin/${project.version}</url>
-        </site>
-    </distributionManagement>
 </project>
