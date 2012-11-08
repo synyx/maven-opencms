@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+<duplication lines="20" tokens="125">
+<file line="258" path="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/com/eurelis/opencms/ant/task/ManifestBuilderTask.java"/>
+<file line="355" path="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/com/eurelis/opencms/ant/task/ManifestBuilderTask.java"/>
+<codefragment>
+<![CDATA[
+                                uuidNode2.addText(new CmsUUID().toString());
+                            }
+                        }
+
+
+                        tmpFile.addElement("datelastmodified").addText(dateformat.format(
+                                new File(
+                                    srcfolder + File.separator + filepath)
+                                    .lastModified()));
+                        tmpFile.addElement("userlastmodified").addText("Admin");
+                        tmpFile.addElement("datecreated").addText(dateformat.format(
+                                new File(
+                                    srcfolder + File.separator + filepath)
+                                    .lastModified()));
+                        tmpFile.addElement("usercreated").addText("Admin");
+                        tmpFile.addElement("flags").addText("0");
+
+                        Element properties = tmpFile.addElement("properties");
+                        String tmpPropFile = srcfolder + File.separator
+                            + filePropertiesPath(filepath);
+]]>
+</codefragment>
+</duplication>
+</pmd-cpd>

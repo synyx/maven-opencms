@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2012-11-08T17:16:18.334">
+<file name="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/com/eurelis/opencms/ant/task/ManifestBuilderTask.java">
+<violation beginline="858" endline="858" begincolumn="18" endcolumn="69" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="com.eurelis.opencms.ant.task" class="ManifestBuilderTask" method="addAccessesToTree" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'addAccessesToTree(Element,String)'.
+</violation>
+</file>
+<file name="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/org/synyx/mojo/opencms/AbstractOpenCmsMojo.java">
+<violation beginline="61" endline="61" begincolumn="20" endcolumn="25" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms" class="AbstractOpenCmsMojo" variable="author" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'author'.
+</violation>
+</file>
+<file name="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/org/synyx/mojo/opencms/helper/A_AttributeConverter.java">
+<violation beginline="58" endline="61" begincolumn="21" endcolumn="21" rule="CollapsibleIfStatements" ruleset="Basic Rules" package="org.synyx.mojo.opencms.helper" class="A_AttributeConverter" method="isSearchedTag" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+</file>
+<file name="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/org/synyx/mojo/opencms/helper/FlagConverter.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.dom4j.Attribute'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="50" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.opencms.security.CmsAccessControlEntry'
+</violation>
+</file>
+<file name="/home/flowhase/Projects/Checkouts/maven-opencms/src/main/java/org/synyx/mojo/opencms/helper/PermissionConverter.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.dom4j.Attribute'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="45" rule="UnusedImports" ruleset="Import Statement Rules" package="org.synyx.mojo.opencms.helper" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.opencms.security.CmsPermissionSet'
+</violation>
+<violation beginline="15" endline="15" begincolumn="33" endcolumn="41" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" variable="ATTR_READ" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'ATTR_READ'.
+</violation>
+<violation beginline="17" endline="17" begincolumn="33" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" variable="ATTR_WRITE" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'ATTR_WRITE'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="33" endcolumn="41" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" variable="ATTR_VIEW" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'ATTR_VIEW'.
+</violation>
+<violation beginline="21" endline="21" begincolumn="33" endcolumn="44" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" variable="ATTR_CONTROL" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'ATTR_CONTROL'.
+</violation>
+<violation beginline="23" endline="23" begincolumn="33" endcolumn="44" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" variable="ATTR_PUBLISH" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'ATTR_PUBLISH'.
+</violation>
+<violation beginline="39" endline="39" begincolumn="13" endcolumn="17" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.synyx.mojo.opencms.helper" class="PermissionConverter" method="convertTag" variable="value" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'value'.
+</violation>
+</file>
+</pmd>
